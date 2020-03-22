@@ -29,6 +29,7 @@
                 <configuration>
                     <contractsDirectory>${project.basedir}/src/test/resources/contracts</contractsDirectory>
                      <baseClassForTests>com.progex.rms.resource.restaurant.RestaurantRequestBaseContract</baseClassForTests>
+                     <baseClassForTests>com.progex.rms.resource.category.RestaurantCategoryBaseContract</baseClassForTests>
                 </configuration>
             </plugin>
         </plugins>
