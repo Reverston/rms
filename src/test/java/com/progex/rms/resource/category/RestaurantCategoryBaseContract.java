@@ -1,4 +1,5 @@
-package com.reverston.rms.resource.restaurant;
+package com.progex.rms.resource.category;
+
 
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Before;
@@ -11,26 +12,23 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
-
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class RestaurantRequestBaseContract {
+public class RestaurantCategoryBaseContract {
 
     @Autowired
-    private RestaurantController restaurantController;
+    private RestaurantCategoryController restaurantCategoryController;
 
     @MockBean
-    private RestaurantHandler restaurantHandler;
+    private RestaurantCategoryHandler restaurantCategoryHandler;
 
     @Before
     public void setup() {
-        RestAssuredMockMvc.standaloneSetup(restaurantController);
-        RestaurantResponse restaurantResponse = RestaurantResponse.builder()
+        RestAssuredMockMvc.standaloneSetup(restaurantCategoryController);
+        RestaurantCategoryResponse restaurantCategoryCreateResponse = RestaurantCategoryResponse.builder()
+                .id(123)
                 .name("name")
-                .category("category")
-                .hotLine("hotline")
-                .id(1)
                 .build();
-        when(restaurantHandler.add(any(RestaurantRequest.class))).thenReturn(restaurantResponse);
+        when(restaurantCategoryHandler.add(any(RestaurantCategoryCreateRequest.class))).thenReturn(restaurantCategoryCreateResponse);
     }
 }

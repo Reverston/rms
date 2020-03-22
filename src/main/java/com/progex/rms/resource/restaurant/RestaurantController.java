@@ -1,4 +1,4 @@
-package com.reverston.rms.resource.restaurant;
+package com.progex.rms.resource.restaurant;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
