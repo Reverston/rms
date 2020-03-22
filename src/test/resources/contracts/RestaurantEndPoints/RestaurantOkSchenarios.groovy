@@ -5,7 +5,7 @@ import org.springframework.cloud.contract.spec.Contract
 [
         Contract.make {
             request {
-                name("requestWithAllMandatoryParametersShouldReturnOK")
+                name("requestCreateRestaurantWithAllMandatoryParametersShouldReturnOK")
                 method POST()
                 url("/api/add-restaurant")
                 body([

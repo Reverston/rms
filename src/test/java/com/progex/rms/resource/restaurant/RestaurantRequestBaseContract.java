@@ -1,4 +1,4 @@
-package com.reverston.rms.resource.restaurant;
+package com.progex.rms.resource.restaurant;
 
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Before;

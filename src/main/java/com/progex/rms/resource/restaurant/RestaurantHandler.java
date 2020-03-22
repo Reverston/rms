@@ -1,6 +1,6 @@
-package com.reverston.rms.resource.restaurant;
+package com.progex.rms.resource.restaurant;
 
-import com.reverston.rms.service.restaurant.RestaurantService;
+import com.progex.rms.service.restaurant.RestaurantService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
