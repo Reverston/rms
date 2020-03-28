@@ -1,4 +1,4 @@
-package contracts.RestaurantContracts
+package contracts.RestaurantEndPoints
 
 import org.springframework.cloud.contract.spec.Contract
 
