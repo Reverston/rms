@@ -27,9 +27,16 @@
                 <artifactId>spring-cloud-contract-maven-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <contractsDirectory>${project.basedir}/src/test/resources/contracts</contractsDirectory>
-                     <baseClassForTests>com.progex.rms.resource.restaurant.RestaurantRequestBaseContract</baseClassForTests>
-                     <baseClassForTests>com.progex.rms.resource.category.RestaurantCategoryBaseContract</baseClassForTests>
+                    <baseClassMappings>
+                        <baseClassMapping>
+                            <contractPackageRegex>.*RestaurantEndPoints.*</contractPackageRegex>
+                            <baseClassFQN>com.progex.rms.resource.restaurant.RestaurantBaseContract</baseClassFQN>
+                        </baseClassMapping>
+                        <baseClassMapping>
+                            <contractPackageRegex>.*RestaurantCategoryEndPoints.*</contractPackageRegex>
+                            <baseClassFQN>com.progex.rms.resource.category.RestaurantCategoryBaseContract</baseClassFQN>
+                        </baseClassMapping>
+                    </baseClassMappings>
                 </configuration>
             </plugin>
         </plugins>
