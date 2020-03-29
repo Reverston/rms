@@ -1,4 +1,4 @@
-package com.progex.rms.resource.category;
+package com.progex.rms.resource.restaurant_category;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.progex.rms.resource.category;
+package com.progex.rms.resource.restaurant_category;
 
 
 import com.progex.rms.RestaurantApplication;
@@ -29,6 +29,7 @@ public class RestaurantCategoryBaseContract {
         RestaurantCategoryResponse restaurantCategoryCreateResponse = RestaurantCategoryResponse.builder()
                 .id(123)
                 .name("name")
+                .description("description")
                 .build();
         when(restaurantCategoryHandler.add(any(RestaurantCategoryCreateRequest.class))).thenReturn(restaurantCategoryCreateResponse);
     }

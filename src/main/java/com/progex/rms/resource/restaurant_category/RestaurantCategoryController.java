@@ -1,4 +1,4 @@
-package com.progex.rms.resource.category;
+package com.progex.rms.resource.restaurant_category;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
