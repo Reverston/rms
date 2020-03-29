@@ -15,7 +15,7 @@ public class RestaurantCategoryController {
 
     @PostMapping("/add-restaurant-category")
     public RestaurantCategoryResponse addRestaurantCategory(
-            @RequestHeader("CorrelationId") @NotBlank String correlationId,
+            @RequestHeader("X-Correlation-Id") @NotBlank String correlationId,
             @RequestBody @NotNull RestaurantCategoryCreateRequest restaurantCategoryCreateRequest) {
         return restaurantCategoryHandler.add(restaurantCategoryCreateRequest);
     }
