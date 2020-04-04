@@ -1,12 +1,10 @@
 package com.progex.rms.resource.restaurant_category;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
 @NoArgsConstructor
 public class RestaurantCategoryCreateRequest {
     private String name;
