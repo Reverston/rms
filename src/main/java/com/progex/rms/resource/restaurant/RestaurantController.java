@@ -15,7 +15,7 @@ public class RestaurantController {
 
     @PostMapping("/add-restaurant")
     public RestaurantResponse addRestaurant(
-            @RequestHeader("CorrelationId") @NotBlank String correlationId,
+            @RequestHeader("X-Correlation-Id") @NotBlank String correlationId,
             @RequestBody @NotNull RestaurantRequest restaurantRequest) {
         return restaurantHandler.add(restaurantRequest);
     }

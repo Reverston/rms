@@ -14,7 +14,7 @@ import org.springframework.cloud.contract.spec.Contract
                 ])
                 headers {
                     contentType(applicationJson())
-                    header 'CorrelationId': $(anyNonBlankString())
+                    header 'X-Correlation-Id': $(anyNonBlankString())
                 }
             }
             response {

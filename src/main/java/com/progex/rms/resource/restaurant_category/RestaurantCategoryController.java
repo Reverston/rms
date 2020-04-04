@@ -1,4 +1,4 @@
-package com.progex.rms.resource.category;
+package com.progex.rms.resource.restaurant_category;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ public class RestaurantCategoryController {
 
     @PostMapping("/add-restaurant-category")
     public RestaurantCategoryResponse addRestaurantCategory(
-            @RequestHeader("CorrelationId") @NotBlank String correlationId,
+            @RequestHeader("X-Correlation-Id") @NotBlank String correlationId,
             @RequestBody @NotNull RestaurantCategoryCreateRequest restaurantCategoryCreateRequest) {
         return restaurantCategoryHandler.add(restaurantCategoryCreateRequest);
     }
