@@ -7,7 +7,7 @@ import org.springframework.cloud.contract.spec.Contract
             request {
                 name("requestCreateRestaurantCategoryWithAllMandatoryParametersShouldReturnOK")
                 method POST()
-                url("/api/add-restaurant-category")
+                url("/api/restaurant-category")
                 body([
                         name       : $(anyNonBlankString()),
                         description: $(anyNonBlankString())
@@ -25,6 +25,28 @@ import org.springframework.cloud.contract.spec.Contract
                 body(
                         id: $(anyPositiveInt()),
                         name: $(anyNonBlankString())
+                )
+            }
+        },
+        Contract.make {
+            request {
+                name("requestGetCategoryWithAllMandatoryParametersShouldReturnOK")
+                method GET()
+                url("/api/restaurant-category")
+                headers {
+                    contentType(applicationJson())
+                    header 'X-Correlation-Id': $(anyNonBlankString())
+                }
+            }
+            response {
+                status OK()
+                headers {
+                    contentType applicationJson()
+                }
+                body([
+                        id  : $(anyPositiveInt()),
+                        name: $(anyNonBlankString())
+                ]
                 )
             }
         }

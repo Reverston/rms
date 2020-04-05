@@ -8,7 +8,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.junit.Assert.assertNotNull;
+import java.util.Collections;
+import java.util.List;
+
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.any;
@@ -38,5 +41,35 @@ public class RestaurantCategoryHandlerTest {
 
         //Then
         assertNotNull(response);
+    }
+
+    @Test
+    public void testShouldBeAbleToGetCategories(){
+        //Given
+        when(restaurantCategoryMapper.map(any(RestaurantCategory.class)))
+                .thenReturn(mock(RestaurantCategoryResponse.class));
+        when(restaurantCategoryService.getAll())
+                .thenReturn(Collections.singletonList(mock(RestaurantCategory.class)));
+
+        //When
+        List<RestaurantCategoryResponse> categoryResponseList = restaurantCategoryHandler.getCategories();
+
+        //Then
+        assertNotNull(categoryResponseList);
+        assertFalse(categoryResponseList.isEmpty());
+    }
+
+    @Test
+    public void testShouldBeAbleToGetEmptyCategoriesList(){
+        //Given
+        when(restaurantCategoryService.getAll())
+                .thenReturn(Collections.emptyList());
+
+        //When
+        List<RestaurantCategoryResponse> categoryResponseList = restaurantCategoryHandler.getCategories();
+
+        //Then
+        assertNotNull(categoryResponseList);
+        assertTrue(categoryResponseList.isEmpty());
     }
 }
