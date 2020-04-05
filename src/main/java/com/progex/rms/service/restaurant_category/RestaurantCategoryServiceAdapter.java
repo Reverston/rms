@@ -7,6 +7,8 @@ import com.progex.rms.core.RestaurantCategory;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @AllArgsConstructor
 public class RestaurantCategoryServiceAdapter implements RestaurantCategoryService {
@@ -17,5 +19,11 @@ public class RestaurantCategoryServiceAdapter implements RestaurantCategoryServi
     public RestaurantCategory save(RestaurantCategory restaurantCategory) {
         CategoryEntity categoryEntity = entityMapper.map(restaurantCategory);
         return entityMapper.map(restaurantCategoryRepository.save(categoryEntity));
+    }
+
+    @Override
+    public List<RestaurantCategory> getAll() {
+        //TODO to be implemented
+        return null;
     }
 }

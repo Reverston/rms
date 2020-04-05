@@ -5,8 +5,8 @@ import com.progex.rms.restaurant_category.RestaurantCategoryService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 @AllArgsConstructor
@@ -20,7 +20,8 @@ public class RestaurantCategoryHandler {
     }
 
     public List<RestaurantCategoryResponse> getCategories() {
-        //TODO to be implemented next
-        return Collections.emptyList();
+        List<RestaurantCategory> categories = restaurantCategoryService.getAll();
+        return categories.stream().map(restaurantCategoryMapper::map)
+                .collect(Collectors.toList());
     }
 }
