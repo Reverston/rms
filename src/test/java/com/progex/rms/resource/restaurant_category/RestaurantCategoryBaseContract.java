@@ -10,6 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Collections;
+import java.util.List;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -32,5 +35,8 @@ public class RestaurantCategoryBaseContract {
                 .description("description")
                 .build();
         when(restaurantCategoryHandler.add(any(RestaurantCategoryCreateRequest.class))).thenReturn(restaurantCategoryCreateResponse);
+
+        List<RestaurantCategoryResponse> categoryList = Collections.singletonList(restaurantCategoryCreateResponse);
+        when(restaurantCategoryHandler.getCategories()).thenReturn(categoryList);
     }
 }
