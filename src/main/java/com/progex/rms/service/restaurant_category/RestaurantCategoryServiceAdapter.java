@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 @AllArgsConstructor
@@ -23,7 +24,9 @@ public class RestaurantCategoryServiceAdapter implements RestaurantCategoryServi
 
     @Override
     public List<RestaurantCategory> getAll() {
-        //TODO to be implemented
-        return null;
+       return restaurantCategoryRepository.findAll()
+                .stream()
+               .map(entityMapper::map)
+               .collect(Collectors.toList());
     }
 }
