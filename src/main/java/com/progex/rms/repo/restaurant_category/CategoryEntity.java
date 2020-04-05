@@ -1,7 +1,6 @@
 package com.progex.rms.repo.restaurant_category;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -9,6 +8,8 @@ import javax.persistence.*;
 @Table(name = "restaurant_category")
 @Getter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

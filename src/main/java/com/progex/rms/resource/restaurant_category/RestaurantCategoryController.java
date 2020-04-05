@@ -22,7 +22,8 @@ public class RestaurantCategoryController {
     }
 
     @GetMapping("/restaurant-category")
-    public List<RestaurantCategoryResponse> getRestaurantCategories() {
+    public List<RestaurantCategoryResponse> getRestaurantCategories(
+            @RequestHeader("X-Correlation-Id") @NotBlank String correlationId) {
         return restaurantCategoryHandler.getCategories();
     }
 }
